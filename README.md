@@ -36,45 +36,45 @@ sudo nano /etc/default/octoprint
 
 # Configuration for /etc/init.d/octoprint
 
-# The init.d script will only run if this variable non-empty.
-OCTOPRINT_USER=chris
+        # The init.d script will only run if this variable non-empty.
+        OCTOPRINT_USER=chris
 
-# base directory to use
-BASEDIR=/home/chris/.octoprint
+        # base directory to use
+        BASEDIR=/home/chris/.octoprint
 
-# configuration file to use
-CONFIGFILE=/home/chris/.octoprint/config.yaml
+        # configuration file to use
+        CONFIGFILE=/home/chris/.octoprint/config.yaml
 
-# On what port to run daemon, default is 5000
-PORT=5000
+        # On what port to run daemon, default is 5000
+        PORT=5000
 
-# Path to the OctoPrint executable, you need to set this to match your installation!
-DAEMON=/home/chris/OctoPrint/venv/bin/octoprint
+        # Path to the OctoPrint executable, you need to set this to match your installation!
+        DAEMON=/home/chris/OctoPrint/venv/bin/octoprint
 
-# What arguments to pass to octoprint, usually no need to touch this
-DAEMON_ARGS="--port=$PORT"
+        # What arguments to pass to octoprint, usually no need to touch this
+        DAEMON_ARGS="--port=$PORT"
 
-# Umask of files octoprint generates, Change this to 000 if running octoprint as its own, separate user
-UMASK=022
+        # Umask of files octoprint generates, Change this to 000 if running octoprint as its own, separate user
+        UMASK=022
 
-# Process priority, 0 here will result in a priority 20 process.
-# -2 ensures Octoprint has a slight priority over user processes.
-NICELEVEL=-2
+        # Process priority, 0 here will result in a priority 20 process.
+        # -2 ensures Octoprint has a slight priority over user processes.
+        NICELEVEL=-2
 
-# Should we run at startup?
-START=yes
+        # Should we run at startup?
+        START=yes
 
 
-Add default to autostart:
-sudo update-rc.d octoprint defaults
+# Add default to autostart:
+        sudo update-rc.d octoprint defaults
 
-Check octoprint service status with:
-sudo service octoprint status 
+# Check octoprint service status with:
+        sudo service octoprint status 
 
-Add your users to sudoers file so it can run shutdown commands:
-sudo nano /etc/sudoers.d/octoprint-shutdown
+# Add your users to sudoers file so it can run shutdown commands:
+        sudo nano /etc/sudoers.d/octoprint-shutdown
 
-chris ALL=NOPASSWD: /sbin/shutdown
+        chris ALL=NOPASSWD: /sbin/shutdown
 
 
 Install haproxy:
