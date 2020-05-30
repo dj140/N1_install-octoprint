@@ -34,7 +34,7 @@ sudo usermod -a -G dialout dj
 Edit the user and remove comments  in the default file:
 sudo nano /etc/default/octoprint
 
-# Configuration for /etc/init.d/octoprint
+## Configuration for /etc/init.d/octoprint
 
         # The init.d script will only run if this variable non-empty.
         OCTOPRINT_USER=chris
