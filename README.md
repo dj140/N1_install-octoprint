@@ -8,9 +8,9 @@
         sudo apt upgrade
         sudo reboot now
 
-cd ~
-sudo apt install python-pip python-dev python-setuptools python-virtualenv git libyaml-dev build-essential
-mkdir OctoPrint && cd OctoPrint
+        cd ~
+        sudo apt install python-pip python-dev python-setuptools python-virtualenv git libyaml-dev build-essential
+        mkdir OctoPrint && cd OctoPrint
 
 virtualenv venv
 
@@ -22,14 +22,14 @@ sudo update-command-not-found
         The program 'virtualenv' is currently not installed.  To run 'virtualenv' please ask your administrator to install the package 'virtualenv'
         virtualenv: command not found
 
-sudo apt install virtualenv
-source venv/bin/activate
+        sudo apt install virtualenv
+        source venv/bin/activate
 
-pip install pip --upgrade
-pip install https://get.octoprint.org/latest
-sudo usermod -a -G tty dj
-sudo usermod -a -G dialout dj
-~/OctoPrint/venv/bin/octoprint serve
+        pip install pip --upgrade
+        pip install https://get.octoprint.org/latest
+        sudo usermod -a -G tty dj
+        sudo usermod -a -G dialout dj
+        ~/OctoPrint/venv/bin/octoprint serve
 
 ### Edit the user and remove comments  in the default file:
         sudo nano /etc/default/octoprint
@@ -125,19 +125,19 @@ sudo usermod -a -G dialout dj
 
 
 ### Enable haproxy:
-        sudo nano /etc/default/haproxy
+   sudo nano /etc/default/haproxy
 
-# Defaults file for HAProxy
-#
-# This is sourced by both, the initscript and the systemd unit file, so do not
-# treat it as a shell script fragment.
+        # Defaults file for HAProxy
+        #
+        # This is sourced by both, the initscript and the systemd unit file, so do not
+        # treat it as a shell script fragment.
 
-# Change the config file location if needed
-#CONFIG="/etc/haproxy/haproxy.cfg"
+        # Change the config file location if needed
+        #CONFIG="/etc/haproxy/haproxy.cfg"
 
-# Add extra flags here, see haproxy(1) for a few options
-#EXTRAOPTS="-de -m 16"
-ENABLE=1
+        # Add extra flags here, see haproxy(1) for a few options
+        #EXTRAOPTS="-de -m 16"
+        ENABLE=1
 
 ### Check haproxy:
         sudo service haproxy status
